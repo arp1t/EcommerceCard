@@ -1,0 +1,102 @@
+.left-column{
+	float:left;
+	width:50%;
+	padding:10px;
+}
+.right-column{
+	float:right;
+	width:50%;
+	padding:10px;
+
+}
+/* Default behavior for 'payment_from' selection */
+#new-tab{
+	display:none;
+	margin-top: 20px;
+}
+
+#existing-tab{
+	display:block;
+}
+
+/*Fields*/
+#label-card-number{
+	margin-bottom:10px;
+	letter-spacing: 1px;
+}
+#field-card-number{
+	font-family: 'Courier New';
+	width:200px;
+	height:30px;
+	letter-spacing: 1px;
+	font-size: 19px;
+}
+#label-expiration-date{
+	padding: 10px 20px 10px 0px;
+	letter-spacing: 1px;
+	font-size:12px;
+}
+#field-expiration-date{
+	font-family: 'Courier New';
+	width:55px;
+	height:20px;
+	letter-spacing: 1px;
+	font-size: 16px;
+}
+#label-cvv{
+	padding: 10px 0px 10px 40px;
+	letter-spacing: 1px;
+	font-size:12px;
+}
+#field-cvv{
+	font-family: 'Courier New';
+	margin-left:60px;
+	width:33px;
+	height:20px;
+	letter-spacing: 1px;
+	font-size: 16px;
+}
+
+/*Preview*/
+#debit-card{
+	font-family: 'Courier New';
+	margin: auto;
+	margin-top: -120px;
+	width:230px;
+	height:140px;
+	font-size: 10px;
+	background-color: #9e3134;
+	border-radius: 6px;
+	color:#FFF;
+}
+
+#print-card-number{
+	font-size: 12px;
+	padding: 70px 10px 3px 15px;
+	letter-spacing: 2px;
+}
+#print-expiration-date{
+	padding: 0px 0px 0px 110px;
+	letter-spacing: 1px;
+
+}
+#print-card-name{
+	text-transform: uppercase;
+	font-size: 14px;
+	letter-spacing: 1px;
+	padding: 10px 0px 5px 15px;
+}
+#submit-card{
+	cursor: pointer;
+	margin-left:33%;
+	border:none;
+	letter-spacing: 1px;
+	color: #FFF;
+	text-transform: uppercase;
+	border-radius:20px;
+	padding: 10px 25px;
+	background-color: #7e2729;
+}
+#submit-card:hover{
+	background-color: #4f181a;
+}

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  card_number: MyString
+  expiration_date: MyString
+  cvv: 1
+  last_four: 1
+
+two:
+  user_id: 1
+  card_number: MyString
+  expiration_date: MyString
+  cvv: 1
+  last_four: 1

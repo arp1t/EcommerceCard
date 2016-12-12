@@ -1,0 +1,108 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+/* Removing spinners from number field*/
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+.header-container{
+	text-align: right;
+}
+#header-card-user{
+	color:#000;
+	text-decoration: none;
+ 	cursor:pointer;
+ 	display: inline;
+ 	background-color: #C3CF21;
+ 	width:50px;
+ 	padding: 15px 30px;
+ 	border:5px solid #FFF;
+}
+
+/*Form */
+.form-container{
+	background-color: #D6D9DF;
+	margin: auto;
+	margin-top:60px;
+	padding:15px;
+	width:500px;
+	height:300px;
+	border-radius:6px;	
+}
+
+#form-errors{
+	color: red;
+	margin-top:20px;
+	margin-left: 40%;
+	text-align: left;
+}
+
+#status-errors{
+	color: red;
+	margin-top:20px;
+	text-align: center;
+}
+/* Modal */
+.modal-window {
+	position:fixed;
+  background-color: rgba(0,0,0,0.7);
+	top:0;
+	right:0;
+	bottom:0;
+	left:0;
+	z-index:999;
+	opacity:0;
+	pointer-events:none;
+	-webkit-transition:all 0.3s;
+	-moz-transition:all 0.3s;
+	transition:all 0.3s;
+}
+.modal-window:target {
+	opacity:1;
+	pointer-events:auto;
+}
+.modal-window>div {
+	width:400px;
+	position:relative;
+	margin:10% auto;
+  padding:2rem;
+	background:#fff;
+	color:#444;
+}
+.modal-window header {
+	font-weight:bold;
+}
+.modal-close {
+	color:#aaa;
+	line-height:50px;
+	font-size:80%;
+	position:absolute;
+	right:0;
+	text-align:center;
+	top:0;
+	width:70px;
+	text-decoration:none;
+}
+.modal-close:hover {
+	color:#000;
+}
+.modal-window h1 {
+  font-size: 150%;
+  margin: 0 0 15px;
+}

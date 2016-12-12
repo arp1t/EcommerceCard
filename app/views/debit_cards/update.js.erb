@@ -1,0 +1,13 @@
+<% if @status_code == '100' %>
+	$('#form-errors').html('');
+	window.location = "/#open-modal";
+<% elsif @status_code == '203' %>
+	$('#form-errors').html('');
+	$('#status-errors').html('Your payment has been declined. Please re-check with the providing bank.');
+<% elsif @debit_card.errors.any? %>
+	$('#status-errors').html('');
+	$('#form-errors').html('<p>Following error(s) occured:</p>');
+	<% @debit_card.errors.full_messages.uniq.each do |err|%>
+	$('#form-errors').append('<li id="form-errors-list"><%=err%></li>');
+	<%end%>
+<% end %>

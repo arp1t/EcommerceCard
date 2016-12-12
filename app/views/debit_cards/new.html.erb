@@ -1,0 +1,62 @@
+<div class="form-container">
+	<div class="left-column">
+		<%= form_for(@debit_card, remote: true) do |f| %>
+
+		<%= f.label :payment_from, "Existing Card", :value => "existing"  %>
+		<%= f.radio_button :payment_from, 'existing', :checked => true, onClick: "show_on_left('existing');"  %>
+		<%= f.label :payment_from, "New Card", :value => "new" %>
+		<%= f.radio_button :payment_from, 'new', onClick: "show_on_left('new');"%>
+
+		<div id="existing-tab">
+			<h1>On file</h1>
+			<% if !@debit_card.last_four.nil? && !@debit_card.expiration_date.nil? %>
+			Last four: x<%= @debit_card.last_four%>
+			<br />
+			Expiration date: <%= @debit_card.expiration_date%>
+			<% end %>
+		</div>
+		<div id="new-tab">
+			<div class="field">
+				<%= f.label :card_number, id: 'label-card-number' %><br>
+				<%= f.text_field :card_number, value:'', maxlength: '16', id: 'field-card-number' %>
+			</div>
+			<div class="field">
+				<%= f.label :expiration_date, 'Exp. date', id: 'label-expiration-date' %><%= f.label :cvv, 'CVV', id: 'label-cvv' %><br>
+				<%= f.text_field :expiration_date, value:'', placeholder: 'mm/yy', maxlength: '5', id: 'field-expiration-date' %><%= f.text_field :cvv, value:'', maxlength: '3', id: 'field-cvv' %>
+			</div>
+		</div>
+	</div>
+	<div class="right-column">
+		<div id="debit-card">
+			<div id="print-card-number">
+				<%="XXXX XXXX XXXX #{@debit_card.last_four}" if @debit_card.card_number%>
+			</div>
+			<div id="print-expiration-date">
+				<%=@debit_card.expiration_date%>
+			</div>
+			<div id="print-card-name">
+				<%=User.find_by_id(@debit_card.user_id).full_name%>
+			</div>
+		</div>
+		<br />
+		<div class="actions">
+			<%= f.submit 'Submit', id: 'submit-card' %>
+		</div>
+		<% end %>
+	</div>
+</div>
+
+<script>
+	var input_card_number = document.getElementById('field-card-number');
+	var input_expiration_date = document.getElementById('field-expiration-date');
+	input_card_number.onkeyup = function(){
+		var foo = input_card_number.value.split(" ").join(""); 
+		if (foo.length > 0) {
+			foo = foo.match(new RegExp('.{1,4}', 'g')).join(" ");
+		}
+		document.getElementById('print-card-number').innerHTML = foo;
+	}
+	input_expiration_date.onkeyup = function(){
+		document.getElementById('print-expiration-date').innerHTML = input_expiration_date.value;
+	}
+</script>

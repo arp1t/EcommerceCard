@@ -1,0 +1,9 @@
+<div class="header">
+	<div class="header-container">
+		<%fetch_all_users%>
+		Login as:
+		<% @users.each do |u| %>
+				<%=link_to u.first_name,root_path(user_id: u.id), id: 'header-card-user' %>
+		<% end %>
+	</div>
+</div>
